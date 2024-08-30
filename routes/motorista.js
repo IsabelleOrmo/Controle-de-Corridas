@@ -3,7 +3,7 @@ import express from 'express';
 const router = express.Router();
 
 const motoristasRouter = (db) => {
-//motorista: IdMotorista Nome CPF DataNas CNH 
+
 router.post('/cadastrar', (req, res) => {
     const { id, nome, cpf, dataNas, cnh } = req.body;
     

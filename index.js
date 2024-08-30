@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import mysql from 'mysql2';
 import carrosRoutes from './routes/carros.js';
 import motoristasRouter from './routes/motorista.js';
+import corridasRouter from './routes/corridas.js';
 
 const app = express(); 
 const PORT = 5000;
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 
 app.use('/carros', carrosRoutes(db));
 app.use('/motoristas', motoristasRouter(db));
+app.use('/viagens', corridasRouter(db))
 
 app.listen(PORT, () => console.log(`Servidor rodando na porta: http://localhost:${PORT}`));
 
